@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- -----Header----- -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.jpg" class="logo">
+                <ul id="menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+
+            </nav>
+        <div class="header-text">
+            <p>SOFTWARE ENGINEER</p>
+            <h1>Hi, I'm <span>Thanh</span><br> from VietNam</h1>
+        </div>
+        </div>
+    </div>
+
+<!-- -----About----- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg" alt="">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Odio magnam eos vitae sapiente cupiditate dignissimos rerum 
+                    tenetur labore ullam perferendis animi delectus unde quisquam 
+                    expedita ex excepturi, quaerat architecto amet.</p>
+
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skill</p>
+                        <p class="tab-links" onclick="opentab('experiences')">Experience</p>
+                        <p class="tab-links" onclick="opentab('educations')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Basic web Development</li>
+                            <li><span>App Development</span><br>Bulding basic desktop apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experiences">
+                        <ul>
+                            <li><span>2026-2028</span><br>Software Engineer at FPTSoft</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="educations">
+                        <ul>
+                            <li><span>2022-2026</span><br>Software Engineer from FPT University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----Portfolio----- -->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">My Work</h1> 
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/work-1.png">
+                        <div class="layer">
+                            <h3>Desktop App</h3>
+                            <p>Use in desktop</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="images/work-2.jpg">
+                        <div class="layer">
+                            <h3>Website</h3>
+                            <p>Use in web browser</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- -----Contact----- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>thanhdepchai@lmao.com</p>
+                    <p>0123456789</p>
+                </div>
+
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var tabLinks = document.getElementsByClassName("tab-links");
+        var tabContents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabName) {
+            for(tabLink of tabLinks) {
+                tabLink.classList.remove("active-link");
+            }
+            for(tabContent of tabContents) {
+                tabContent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+
+    </script>
+
+    <script>
+        var menu = document.getElementById("menu");
+
+        function openmenu() {
+            menu.style.right = "0";
+        }
+
+        function closemenu() {
+            menu.style.right = "-200px";
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/d579de79cd.js" crossorigin="anonymous"></script>
+</body>
+</html>
